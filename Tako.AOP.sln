@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.Infrastructure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.Infrastructure.UnitTest", "Tako.AOP.Infrastructure.UnitTest\Tako.AOP.Infrastructure.UnitTest.csproj", "{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP", "Tako.AOP\Tako.AOP.csproj", "{0385253D-BC55-4413-B442-B9265B9B3286}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.ExceptionExtension", "Tako.AOP.ExceptionExtension\Tako.AOP.ExceptionExtension.csproj", "{8295692F-BB52-47B5-A991-50FFF763E86C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0385253D-BC55-4413-B442-B9265B9B3286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0385253D-BC55-4413-B442-B9265B9B3286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0385253D-BC55-4413-B442-B9265B9B3286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0385253D-BC55-4413-B442-B9265B9B3286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8295692F-BB52-47B5-A991-50FFF763E86C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8295692F-BB52-47B5-A991-50FFF763E86C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8295692F-BB52-47B5-A991-50FFF763E86C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8295692F-BB52-47B5-A991-50FFF763E86C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

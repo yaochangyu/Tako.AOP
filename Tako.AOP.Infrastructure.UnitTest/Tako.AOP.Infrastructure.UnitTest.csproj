@@ -35,7 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentAssertions, Version=4.19.4.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.19.4\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.19.4.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.19.4\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -50,8 +60,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BO.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tako.AOP.ExceptionExtension\Tako.AOP.ExceptionExtension.csproj">
+      <Project>{8295692f-bb52-47b5-a991-50fff763e86c}</Project>
+      <Name>Tako.AOP.ExceptionExtension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tako.AOP.Infrastructure\Tako.AOP.Infrastructure.csproj">
+      <Project>{1d17c97e-825d-4d0c-8466-458a71441d51}</Project>
+      <Name>Tako.AOP.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tako.AOP\Tako.AOP.csproj">
+      <Project>{0385253d-bc55-4413-b442-b9265b9b3286}</Project>
+      <Name>Tako.AOP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

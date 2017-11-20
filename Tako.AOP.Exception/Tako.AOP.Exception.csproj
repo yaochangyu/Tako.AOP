@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1D17C97E-825D-4D0C-8466-458A71441D51}</ProjectGuid>
+    <ProjectGuid>{F239FED3-5EBF-4C07-9D5F-AEDA4D188A2E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tako.AOP.Infrastructure</RootNamespace>
-    <AssemblyName>Tako.AOP.Infrastructure</AssemblyName>
+    <RootNamespace>Tako.AOP.Exception</RootNamespace>
+    <AssemblyName>Tako.AOP.Exception</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,9 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AOPException.cs" />
-    <Compile Include="DynamicMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tako.AOP.Infrastructure\Tako.AOP.Infrastructure.csproj">
+      <Project>{1d17c97e-825d-4d0c-8466-458a71441d51}</Project>
+      <Name>Tako.AOP.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
