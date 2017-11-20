@@ -18,7 +18,7 @@ namespace Tako.AOP.Infrastructure
             }
         }
 
-        public static object Execute<TSource>(TSource instance, Expression<Action<TSource>> member)
+        public static object Execute(object instance, Expression<Action> member)
         {
             var callbackParameters = GetCallbackParameters(member);
             var execute = GenerateExecute(member);
@@ -26,17 +26,17 @@ namespace Tako.AOP.Infrastructure
             return result;
         }
 
-        public static Func<object, object[], object> GenerateExecute<TSource>(Expression<Action<TSource>> member)
+        public static Func<object, object[], object> GenerateExecute(Expression<Action> member)
         {
             var body = (MethodCallExpression) member.Body;
             var methodInfo = body.Method;
-            return GenerateExecute<TSource>(methodInfo);
+            return GenerateExecute(methodInfo);
         }
 
-        public static Func<object, object[], object> GenerateExecute<TSource>(MethodInfo methodInfo)
+        public static Func<object, object[], object> GenerateExecute(MethodInfo methodInfo)
         {
-            var type = typeof(TSource);
-            var key = string.Format("{0}.{1}", type.FullName, methodInfo.Name);
+            var sourceType = methodInfo.DeclaringType;
+            var key = string.Format("{0}.{1}", sourceType.FullName, methodInfo.Name);
             Func<object, object[], object> executer;
 
             if (!s_executeContainers.ContainsKey(key))
@@ -102,7 +102,7 @@ namespace Tako.AOP.Infrastructure
             return executer;
         }
 
-        public static TTarget GetCallbackCustomAttribute<TSource, TTarget>(Expression<Action<TSource>> member)
+        public static TTarget GetCallbackCustomAttribute<TTarget>(Expression<Action> member)
             where TTarget : Attribute
         {
             var result = default(TTarget);
@@ -118,7 +118,7 @@ namespace Tako.AOP.Infrastructure
             return result;
         }
 
-        public static object[] GetCallbackParameters<TSource>(Expression<Action<TSource>> member)
+        public static object[] GetCallbackParameters(Expression<Action> member)
         {
             object[] result = null;
             var body = (MethodCallExpression) member.Body;
@@ -128,7 +128,7 @@ namespace Tako.AOP.Infrastructure
                                  {
                                      var lambda = Expression.Lambda(p, parameters);
                                      var compile = lambda.Compile();
-                                     var value = compile.DynamicInvoke(new object[1]);
+                                     var value = compile.DynamicInvoke();
                                      return value;
                                  }).ToArray();
             return result;

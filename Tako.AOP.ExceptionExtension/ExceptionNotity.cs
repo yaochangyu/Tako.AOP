@@ -6,9 +6,9 @@ namespace Tako.AOP.ExceptionExtension
 {
     public class ExceptionNotity
     {
-        public static void Invoke<TSource>(TSource instance, Expression<Action<TSource>> member, Exception e)
+        public static void Invoke(object instance, Expression<Action> member, Exception e)
         {
-            var attribute = DynamicMethod.GetCallbackCustomAttribute<TSource, ExceptionNotityAttribute>(member);
+            var attribute = DynamicMethod.GetCallbackCustomAttribute< ExceptionNotityAttribute>(member);
             if (attribute != null)
             {
                 attribute.CatchException(e);

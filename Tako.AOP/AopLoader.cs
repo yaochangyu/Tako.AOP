@@ -6,12 +6,12 @@ using Tako.AOP.LogExtension;
 
 namespace Tako.AOP
 {
-    public class AOPLoader<TSource>
+    public class AOPLoader
     {
-        public static object Invoke(TSource instance,
-                                    Expression<Action<TSource>> member)
+        public static object Invoke(object instance,
+                                    Expression<Action> member)
         {
-            Logging.Before(instance,member);
+            Logging.Before(member);
             object result = null;
             try
             {
@@ -24,8 +24,7 @@ namespace Tako.AOP
             }
             finally
             {
-                Logging.After(instance, member);
-
+                Logging.After(member);
             }
 
             return result;

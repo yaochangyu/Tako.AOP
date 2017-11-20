@@ -6,9 +6,9 @@ namespace Tako.AOP.LogExtension
 {
     public class Logging
     {
-        public static void Before<TSource>(TSource instance, Expression<Action<TSource>> member)
+        public static void Before(Expression<Action> member)
         {
-            var attribute = DynamicMethod.GetCallbackCustomAttribute<TSource, LoggingAttribute>(member);
+            var attribute = DynamicMethod.GetCallbackCustomAttribute<LoggingAttribute>(member);
             if (attribute != null)
             {
                 var body = (MethodCallExpression) member.Body;
@@ -17,9 +17,9 @@ namespace Tako.AOP.LogExtension
             }
         }
 
-        public static void After<TSource>(TSource instance, Expression<Action<TSource>> member)
+        public static void After(Expression<Action> member)
         {
-            var attribute = DynamicMethod.GetCallbackCustomAttribute<TSource, LoggingAttribute>(member);
+            var attribute = DynamicMethod.GetCallbackCustomAttribute<LoggingAttribute>(member);
             if (attribute != null)
             {
                 var body = (MethodCallExpression) member.Body;
