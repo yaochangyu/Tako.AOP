@@ -9,6 +9,14 @@ namespace Tako.AOP.Infrastructure.UnitTest
     public class UnitTest1
     {
         [TestMethod]
+        public void 算薪水()
+        {
+            var salaryFormula = new SalaryFormula();
+            var test = new SalaryCalculator(salaryFormula);
+            test.Calculate(10, 10, 0);
+        }
+
+        [TestMethod]
         public void 使用ExpressionTree_調用兩個參數的SetMethod方法_預期得到AOPException()
         {
             var bo = new BO();
@@ -19,10 +27,10 @@ namespace Tako.AOP.Infrastructure.UnitTest
         [TestMethod]
         public void 使用ExpressionTree_調用GetSquare方法_參數2_預期得到4()
         {
-            //var bo = new BO();
-            //var expected = 4;
-            //var actual = (int)AOPLoader<BO>.Invoke(bo, p => p.GetSquare(2));
-            //Assert.AreEqual(expected, actual);
+            var bo = new BO();
+            var expected = 4;
+            var actual = (int) AOPLoader.Invoke(bo, () => bo.GetSquare(2));
+            Assert.AreEqual(expected, actual);
         }
 
         //[TestMethod]

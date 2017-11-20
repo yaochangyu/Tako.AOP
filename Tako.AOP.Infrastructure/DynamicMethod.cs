@@ -102,17 +102,22 @@ namespace Tako.AOP.Infrastructure
             return executer;
         }
 
-        public static TTarget GetCallbackCustomAttribute<TTarget>(Expression<Action> member)
+        public static TTarget GetCallbackCustomAttribute<TTarget>(object sourceInstance,
+                                                                  Expression<Action> sourceMember)
             where TTarget : Attribute
         {
             var result = default(TTarget);
             var targetType = typeof(TTarget);
 
-            var body = (MethodCallExpression) member.Body;
-            var callbackMethod = body.Method;
+            //sourceMember參數所拿到的instance不是我要的，所以另外再傳入instance
+            var sourceType = sourceInstance.GetType();
+            var body = (MethodCallExpression) sourceMember.Body;
 
-            object filterAttribute = callbackMethod.GetCustomAttributes()
-                                                   .FirstOrDefault(p => p.GetType() == targetType);
+            var callbackMethod = body.Method;
+            var sourceMethod = sourceType.GetMethod(callbackMethod.Name);
+
+            object filterAttribute = sourceMethod.GetCustomAttributes()
+                                                 .FirstOrDefault(p => p.GetType() == targetType);
             result = (TTarget) filterAttribute;
 
             return result;

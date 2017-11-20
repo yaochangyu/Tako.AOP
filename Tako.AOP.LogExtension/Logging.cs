@@ -6,23 +6,23 @@ namespace Tako.AOP.LogExtension
 {
     public class Logging
     {
-        public static void Before(Expression<Action> member)
+        public static void Before(object sourceInstance, Expression<Action> sourceMember)
         {
-            var attribute = DynamicMethod.GetCallbackCustomAttribute<LoggingAttribute>(member);
+            var attribute = DynamicMethod.GetCallbackCustomAttribute<LoggingAttribute>(sourceInstance, sourceMember);
             if (attribute != null)
             {
-                var body = (MethodCallExpression) member.Body;
+                var body = (MethodCallExpression) sourceMember.Body;
                 var callbackMethod = body.Method;
                 attribute.WriteBeforeLog(callbackMethod.Name);
             }
         }
 
-        public static void After(Expression<Action> member)
+        public static void After(object sourceInstance, Expression<Action> sourceMember)
         {
-            var attribute = DynamicMethod.GetCallbackCustomAttribute<LoggingAttribute>(member);
+            var attribute = DynamicMethod.GetCallbackCustomAttribute<LoggingAttribute>(sourceInstance, sourceMember);
             if (attribute != null)
             {
-                var body = (MethodCallExpression) member.Body;
+                var body = (MethodCallExpression) sourceMember.Body;
                 var callbackMethod = body.Method;
                 attribute.WriteAfterLog(callbackMethod.Name);
             }

@@ -11,7 +11,7 @@ namespace Tako.AOP
         public static object Invoke(object instance,
                                     Expression<Action> member)
         {
-            Logging.Before(member);
+            Logging.Before(instance,member);
             object result = null;
             try
             {
@@ -24,7 +24,7 @@ namespace Tako.AOP
             }
             finally
             {
-                Logging.After(member);
+                Logging.After(instance,member);
             }
 
             return result;
