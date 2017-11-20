@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}</ProjectGuid>
+    <ProjectGuid>{FC6E8DFA-EC13-4983-A652-C04642F04F57}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tako.AOP.Infrastructure.UnitTest</RootNamespace>
-    <AssemblyName>Tako.AOP.Infrastructure.UnitTest</AssemblyName>
+    <RootNamespace>Tako.AOP.UnitTest</RootNamespace>
+    <AssemblyName>Tako.AOP.UnitTest</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -66,15 +66,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tako.AOP.ExceptionExtension\Tako.AOP.ExceptionExtension.csproj">
-      <Project>{8295692f-bb52-47b5-a991-50fff763e86c}</Project>
+      <Project>{8295692F-BB52-47B5-A991-50FFF763E86C}</Project>
       <Name>Tako.AOP.ExceptionExtension</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tako.AOP.Infrastructure\Tako.AOP.Infrastructure.csproj">
-      <Project>{1d17c97e-825d-4d0c-8466-458a71441d51}</Project>
+      <Project>{1D17C97E-825D-4D0C-8466-458A71441D51}</Project>
       <Name>Tako.AOP.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tako.AOP\Tako.AOP.csproj">
-      <Project>{0385253d-bc55-4413-b442-b9265b9b3286}</Project>
+      <Project>{0385253D-BC55-4413-B442-B9265B9B3286}</Project>
       <Name>Tako.AOP</Name>
     </ProjectReference>
   </ItemGroup>

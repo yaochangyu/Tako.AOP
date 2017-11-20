@@ -13,11 +13,11 @@ namespace Tako.AOP
         /// <typeparam name="TSource"></typeparam>
         /// <param name="instance"></param>
         /// <param name="member"></param>
-        public static void Invoke<TSource>(TSource instance, Expression<Action<TSource>> member)
+        public static object Invoke<TSource>(TSource instance, Expression<Action<TSource>> member)
         {
             try
             {
-                DynamicMethod.Execute(instance, member);
+                return DynamicMethod.Execute(instance, member);
             }
             catch (Exception e)
             {

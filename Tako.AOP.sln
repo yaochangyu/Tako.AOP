@@ -5,11 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.Infrastructure", "Tako.AOP.Infrastructure\Tako.AOP.Infrastructure.csproj", "{1D17C97E-825D-4D0C-8466-458A71441D51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.Infrastructure.UnitTest", "Tako.AOP.Infrastructure.UnitTest\Tako.AOP.Infrastructure.UnitTest.csproj", "{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP", "Tako.AOP\Tako.AOP.csproj", "{0385253D-BC55-4413-B442-B9265B9B3286}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.ExceptionExtension", "Tako.AOP.ExceptionExtension\Tako.AOP.ExceptionExtension.csproj", "{8295692F-BB52-47B5-A991-50FFF763E86C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.UnitTest", "Tako.AOP.UnitTest\Tako.AOP.UnitTest.csproj", "{FC6E8DFA-EC13-4983-A652-C04642F04F57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{1D17C97E-825D-4D0C-8466-458A71441D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D17C97E-825D-4D0C-8466-458A71441D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D17C97E-825D-4D0C-8466-458A71441D51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0385253D-BC55-4413-B442-B9265B9B3286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0385253D-BC55-4413-B442-B9265B9B3286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0385253D-BC55-4413-B442-B9265B9B3286}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{8295692F-BB52-47B5-A991-50FFF763E86C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8295692F-BB52-47B5-A991-50FFF763E86C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8295692F-BB52-47B5-A991-50FFF763E86C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC6E8DFA-EC13-4983-A652-C04642F04F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC6E8DFA-EC13-4983-A652-C04642F04F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC6E8DFA-EC13-4983-A652-C04642F04F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC6E8DFA-EC13-4983-A652-C04642F04F57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

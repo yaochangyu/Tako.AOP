@@ -18,11 +18,12 @@ namespace Tako.AOP.Infrastructure
             }
         }
 
-        public static void Execute<TSource>(TSource instance, Expression<Action<TSource>> member)
+        public static object Execute<TSource>(TSource instance, Expression<Action<TSource>> member)
         {
             var callbackParameters = GetCallbackParameters(member);
             var execute = GenerateExecute(member);
-            execute(instance, callbackParameters);
+            var result = execute(instance, callbackParameters);
+            return result;
         }
 
         public static Func<object, object[], object> GenerateExecute<TSource>(Expression<Action<TSource>> member)

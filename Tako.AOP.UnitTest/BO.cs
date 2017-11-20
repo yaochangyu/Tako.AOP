@@ -1,7 +1,7 @@
 ﻿using System;
 using Tako.AOP.ExceptionExtension;
 
-namespace Tako.AOP.Infrastructure.UnitTest
+namespace Tako.AOP.UnitTest
 {
     public class BO
     {
@@ -21,6 +21,11 @@ namespace Tako.AOP.Infrastructure.UnitTest
         public void SetMethod(string name, string msg)
         {
             throw new Exception($"{name},{msg}");
+        }
+
+        public string GetMethod(string name)
+        {
+            return $"{name},可惡出錯了!";
         }
     }
 }
