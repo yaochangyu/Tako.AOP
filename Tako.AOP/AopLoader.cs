@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 using Tako.AOP.ExceptionExtension;
 using Tako.AOP.Infrastructure;
+using Tako.AOP.LogExtension;
 
 namespace Tako.AOP
 {
@@ -10,6 +11,7 @@ namespace Tako.AOP
         public static object Invoke(TSource instance,
                                     Expression<Action<TSource>> member)
         {
+            Logging.Before(instance,member);
             object result = null;
             try
             {
@@ -19,6 +21,11 @@ namespace Tako.AOP
             {
                 ExceptionNotity.Invoke(instance, member, e);
                 throw new AOPException("AOP Exception", e);
+            }
+            finally
+            {
+                Logging.After(instance, member);
+
             }
 
             return result;

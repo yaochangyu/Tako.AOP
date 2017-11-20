@@ -73,6 +73,10 @@
       <Project>{1D17C97E-825D-4D0C-8466-458A71441D51}</Project>
       <Name>Tako.AOP.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tako.AOP.LogExtension\Tako.AOP.LogExtension.csproj">
+      <Project>{339b80fd-bab6-446a-95ac-d6fbf9982b29}</Project>
+      <Name>Tako.AOP.LogExtension</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tako.AOP\Tako.AOP.csproj">
       <Project>{0385253D-BC55-4413-B442-B9265B9B3286}</Project>
       <Name>Tako.AOP</Name>

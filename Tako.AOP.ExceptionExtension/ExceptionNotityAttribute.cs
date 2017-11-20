@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Reflection;
 using isRock.LineBot;
-using Tako.AOP.Infrastructure;
 
 namespace Tako.AOP.ExceptionExtension
 {
-    [AttributeUsage(AttributeTargets.Field |
-                 AttributeTargets.Property |
-                 AttributeTargets.Method,
-     AllowMultiple = true, Inherited = false)]
+    [AttributeUsage(AttributeTargets.Method,
+        AllowMultiple = true, Inherited = false)]
     public class ExceptionNotityAttribute : Attribute
     {
         public string MailTo { get; set; }

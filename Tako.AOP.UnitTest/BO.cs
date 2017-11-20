@@ -1,11 +1,13 @@
 ﻿using System;
 using Tako.AOP.ExceptionExtension;
+using Tako.AOP.LogExtension;
 
 namespace Tako.AOP.UnitTest
 {
     public class BO
     {
         [ExceptionNotity(LineTo = "Ub93d3c87f472511a0c5944d606edb9d1")]
+        [Logging(FileName = "log.txt")]
         public void SetMethod()
         {
             throw new Exception("哎呀出錯了");
@@ -18,6 +20,7 @@ namespace Tako.AOP.UnitTest
         }
 
         [ExceptionNotity(LineTo = "Ub93d3c87f472511a0c5944d606edb9d1")]
+        [Logging()]
         public void SetMethod(string name, string msg)
         {
             throw new Exception($"{name},{msg}");

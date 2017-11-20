@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.ExceptionExtension
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.UnitTest", "Tako.AOP.UnitTest\Tako.AOP.UnitTest.csproj", "{FC6E8DFA-EC13-4983-A652-C04642F04F57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.LogExtension", "Tako.AOP.LogExtension\Tako.AOP.LogExtension.csproj", "{339B80FD-BAB6-446A-95AC-D6FBF9982B29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FC6E8DFA-EC13-4983-A652-C04642F04F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC6E8DFA-EC13-4983-A652-C04642F04F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC6E8DFA-EC13-4983-A652-C04642F04F57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{339B80FD-BAB6-446A-95AC-D6FBF9982B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{339B80FD-BAB6-446A-95AC-D6FBF9982B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{339B80FD-BAB6-446A-95AC-D6FBF9982B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{339B80FD-BAB6-446A-95AC-D6FBF9982B29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
