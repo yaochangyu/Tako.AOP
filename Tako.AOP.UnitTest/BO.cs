@@ -27,5 +27,11 @@ namespace Tako.AOP.UnitTest
         {
             return $"{name},可惡出錯了!";
         }
+
+        public int GetSquare(int source)
+        {
+            var target = source * source;
+            return target;
+        }
     }
 }

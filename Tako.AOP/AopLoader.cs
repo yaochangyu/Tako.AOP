@@ -5,25 +5,23 @@ using Tako.AOP.Infrastructure;
 
 namespace Tako.AOP
 {
-    public class AOPLoader
+    public class AOPLoader<TSource>
     {
-        /// <summary>
-        ///     Apply Attribute
-        /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <param name="instance"></param>
-        /// <param name="member"></param>
-        public static object Invoke<TSource>(TSource instance, Expression<Action<TSource>> member)
+        public static object Invoke(TSource instance,
+                                    Expression<Action<TSource>> member)
         {
+            object result = null;
             try
             {
-                return DynamicMethod.Execute(instance, member);
+                result = DynamicMethod.Execute(instance, member);
             }
             catch (Exception e)
             {
                 ExceptionNotity.Invoke(instance, member, e);
                 throw new AOPException("AOP Exception", e);
             }
+
+            return result;
         }
 
         //public static void Invoke<TSource>(TSource sourceInstance, string methodName, object[] parameters)

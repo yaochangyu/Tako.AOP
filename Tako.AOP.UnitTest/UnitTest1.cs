@@ -12,17 +12,16 @@ namespace Tako.AOP.Infrastructure.UnitTest
         public void 使用ExpressionTree_調用兩個參數的SetMethod方法_預期得到AOPException()
         {
             var bo = new BO();
-
-            Action action = () => AOPLoader.Invoke(bo, p => p.SetMethod("余小章", "可惡出錯了!"));
+            Action action = () => AOPLoader<BO>.Invoke(bo, p => p.SetMethod("余小章", "可惡出錯了!"));
             action.ShouldThrow<AOPException>();
         }
 
         [TestMethod]
-        public void 使用ExpressionTree_調用兩個參數的GetMethod方法_預期得到AOPException()
+        public void 使用ExpressionTree_調用GetSquare方法_參數2_預期得到4()
         {
             var bo = new BO();
-            var expected = $"余小章,可惡出錯了!";
-            var actual = AOPLoader.Invoke(bo, p => p.GetMethod("余小章"));
+            var expected = 4;
+            var actual = (int)AOPLoader<BO>.Invoke(bo, p => p.GetSquare(2));
             Assert.AreEqual(expected, actual);
         }
 
