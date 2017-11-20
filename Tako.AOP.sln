@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.Infrastructure", "Tako.AOP.Infrastructure\Tako.AOP.Infrastructure.csproj", "{1D17C97E-825D-4D0C-8466-458A71441D51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tako.AOP.Infrastructure.UnitTest", "Tako.AOP.Infrastructure.UnitTest\Tako.AOP.Infrastructure.UnitTest.csproj", "{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1D17C97E-825D-4D0C-8466-458A71441D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D17C97E-825D-4D0C-8466-458A71441D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D17C97E-825D-4D0C-8466-458A71441D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0232D864-9E3C-49D2-BE1D-A29F5EE9C028}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
